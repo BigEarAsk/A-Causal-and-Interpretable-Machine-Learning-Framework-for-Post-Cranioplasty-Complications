@@ -66,7 +66,6 @@ def calculate_bca_ci(data, stat_func, alpha=0.05): # use bootstrap
     return res.confidence_interval.low, res.confidence_interval.high
 
 def get_conf(y_prob,y_true,n_bootstrap):
-    # ✅ 原始PRAUC
     precision, recall, thresholds = precision_recall_curve(y_true, y_prob)
     original_auc = auc(recall, precision)
     original_auc = min(original_auc,1)
@@ -88,7 +87,7 @@ def get_conf(y_prob,y_true,n_bootstrap):
         prauc.append(auc_score)
     
     low, high = calculate_bca_ci((prauc,),np.mean)
-    return round(original_auc,3), round(low,3), round(high,3)  # ✅ 改为 original_auc
+    return round(original_auc,3), round(low,3), round(high,3)  
 
 
 if __name__ == '__main__':
