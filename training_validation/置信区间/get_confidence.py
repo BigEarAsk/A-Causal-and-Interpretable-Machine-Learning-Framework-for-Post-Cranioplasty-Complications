@@ -258,13 +258,6 @@ if __name__ == '__main__':
                 else:
                     model = joblib.load('model_parameters_0.02/'+model_name[i]+f'_{vars}.pkl')
                     print(model_name[i]+f'_{vars}.pkl',model.get_params())
-                    if 'External' in name:
-                        if model_name[i] not in ['gam','logit']:
-                            model = CalibratedClassifierCV(base_estimator=model, 
-                                                            method='sigmoid', cv='prefit')
-                            model.fit(X, y)
-                        else:
-                            model = model
                     
                     score = model.predict_proba(X)
 
