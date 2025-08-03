@@ -30,27 +30,20 @@ python train/xxx.py
 The script performs:   
 •	Model training   
 •	Model saving (model.pkl)  
-2. Model Evaluation (置信区间/)
-To apply the trained model to a separate external dataset, run:
-python eval/evaluate_model.py --input your_external_data.csv --model model.pkl
-Outputs:
-•	Predicted probabilities
-•	Performance metrics (AUC, Accuracy, Brier score)
-•	Optional plots (ROC curve, calibration curve, etc.) saved to eval/output/
-Expected external input format is described in eval/external_data_note.md.
-________________________________________
-🔒 Data Handling
-•	This repository does not include any clinical or patient-level data.
-•	All code is structured to ensure clear separation between training and external validation.
-•	No test data are used in model training or hyperparameter tuning.
-________________________________________
-📄 License
-This project is licensed under the MIT License. See LICENSE for more details.
-________________________________________
-📬 Contact
-Your Name
-Department of Neurosurgery, XYZ Hospital
-📧 your.email@institution.edu
-________________________________________
+2. Model Evaluation (置信区间/)  
+To apply the trained model to a separate external dataset, run:  
+```bash
+python 置信区间/get_confidence.py
+```
+```bash
+python 置信区间/get_confidence_no_smote.py
+```
+Outputs:  
+•	Performance metrics excel file(AUC, Accuracy, Brier score,etc)  
+# 🔒 Data Handling
+•	This repository does not include any clinical or patient-level data.  
+•	All code is structured to ensure clear separation between training and external validation.  
+# 📄 License
+This project is licensed under the MIT License. See LICENSE for more details.   
 For academic and research purposes only. No patient data are stored in this repository.
 
