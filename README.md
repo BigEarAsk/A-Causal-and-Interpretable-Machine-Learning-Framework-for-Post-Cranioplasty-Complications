@@ -13,27 +13,24 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-🧠 Model Overview
-•	Task: Binary classification — predict presence or absence of postoperative complications
-•	Algorithms supported: RandomForest, XGBoost, etc.
-•	Input: Structured clinical and intraoperative variables
-•	Output: Trained model and predicted probabilities
-🚀 Usage Instructions
-1. Model Training (train/)
-Prepare your xlsx training data. The format should include:
-•	Clinical features (e.g., age, sex, BMI, operative time, material)
-•	Target label: complication (0 = no, 1 = yes)
+# 🧠 Model Overview
+•	Task: Binary classification — predict presence or absence of postoperative complications   
+•	Algorithms supported: RandomForest, XGBoost, etc(15 total models)  
+•	Input: Structured clinical and intraoperative variables(excel files)  
+•	Output: Trained model files(.pkl)  
+# 🚀 Usage Instructions
+1. Model Training (training_validation/models/)  
+Prepare your excel training data. The format should include:  
+•	Clinical features (e.g., age, sex, BMI, operative time, material)  
+•	Target label: complication (0 = no, 1 = yes)  
 Run:
-bash
-复制编辑
-python train/train_model.py --input your_train_data.csv --output model.pkl
-The script performs:
-•	Data preprocessing
-•	Model training (with cross-validation)
-•	Model saving (model.pkl)
-Model settings can be modified in train/config.yaml.
-________________________________________
-2. Model Evaluation (eval/)
+```bash
+python train/xxx.py 
+```
+The script performs:   
+•	Model training   
+•	Model saving (model.pkl)  
+2. Model Evaluation (置信区间/)
 To apply the trained model to a separate external dataset, run:
 python eval/evaluate_model.py --input your_external_data.csv --model model.pkl
 Outputs:
