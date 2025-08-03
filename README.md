@@ -12,6 +12,7 @@ This repository contains the source code for training and evaluating machine lea
 Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
 🧠 Model Overview
 •	Task: Binary classification — predict presence or absence of postoperative complications
 •	Algorithms supported: RandomForest, XGBoost, etc.
@@ -34,8 +35,6 @@ Model settings can be modified in train/config.yaml.
 ________________________________________
 2. Model Evaluation (eval/)
 To apply the trained model to a separate external dataset, run:
-bash
-复制编辑
 python eval/evaluate_model.py --input your_external_data.csv --model model.pkl
 Outputs:
 •	Predicted probabilities
