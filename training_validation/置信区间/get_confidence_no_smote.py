@@ -133,8 +133,7 @@ if __name__ == '__main__':
         suffix = 'internal validation' if 'External' not in path else 'external validation'
 
         for i in range(len(var_name)):
-
-            cali_X,cali_y = get_data(path = 'models/Derivation Cohort(After Genetic Algorithm).xlsx',id=i)
+            
             print('*'*6+var_name[i]+'*'*6+":")
 
             X,y = get_data(path = path,id=i)
@@ -145,18 +144,11 @@ if __name__ == '__main__':
 
             model = joblib.load('model_parameters_0.02/'+model_name[i]+'_'+var_name[i]+'.pkl')
 
-            if model_name[i] not in ['gam','logit']:
-                calibrated_model = CalibratedClassifierCV(base_estimator=model, 
-                                                method='sigmoid', cv='prefit')
-            else:
-                calibrated_model = model
-
             model_data  = []  # each model's data 
 
             print(var_name[i],end=':')
 
-            calibrated_model.fit(cali_X, cali_y)
-            score = calibrated_model.predict_proba(X)
+            score = model.predict_proba(X)
 
             if model_name[i] != 'gam':
                 score = score[:,1]
