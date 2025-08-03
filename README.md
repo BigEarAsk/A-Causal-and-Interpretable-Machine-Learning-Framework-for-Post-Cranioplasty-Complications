@@ -5,23 +5,6 @@ This repository contains the source code for training and evaluating machine lea
 > ⚠️ Note: This repository contains **code only**. Patient data are not included due to privacy restrictions.
 
 ---
-
-## 📁 Repository Structure
-├── train/ # Scripts for model training
-│ ├── train_model.py # Main training script
-│ ├── utils.py # Utility functions (e.g., preprocessing, metrics)
-│ └── config.yaml # Model and training configuration
-│
-├── eval/ # Scripts for external validation
-│ ├── evaluate_model.py # Evaluation using saved model
-│ ├── output/ # Model outputs (metrics, plots)
-│ └── external_data_note.md # Instructions or notes on expected external data format
-│
-├── requirements.txt # Python dependencies
-└── README.md
-
----
-
 ## ⚙️ Environment Setup
 
 - Python version: `>=3.8`
@@ -36,7 +19,7 @@ pip install -r requirements.txt
 •	Output: Trained model and predicted probabilities
 🚀 Usage Instructions
 1. Model Training (train/)
-Prepare your CSV training data. The format should include:
+Prepare your xlsx training data. The format should include:
 •	Clinical features (e.g., age, sex, BMI, operative time, material)
 •	Target label: complication (0 = no, 1 = yes)
 Run:
