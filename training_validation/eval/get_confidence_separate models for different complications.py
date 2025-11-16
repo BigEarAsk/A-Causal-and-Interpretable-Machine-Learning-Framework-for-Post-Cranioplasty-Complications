@@ -91,7 +91,7 @@ def get_conf(y_prob,y_true,n_bootstrap):
         prauc.append(auc_score)
     
     low, high = calculate_bca_ci((prauc,),np.mean)
-    return round(original_auc,3), round(low,3), round(high,3)  # ✅ 改为 original_auc
+    return round(original_auc,3), round(low,3), round(high,3)  
 
 if __name__ == '__main__':
 
@@ -198,9 +198,9 @@ if __name__ == '__main__':
                 model_data.append(v_range)
 
             model_data.append(f"{prauc:.3f}({low:.3f},{high:.3f})")
-            sheet_data.append(model_data)   # 8 * 14
+            sheet_data.append(model_data)   
             
-            data_total.append(sheet_data)  # 1 * 8 * 14
+            data_total.append(sheet_data)  
 
     write_xls_evaluate(data_total,model_name,var_name,value_name,name)
 
