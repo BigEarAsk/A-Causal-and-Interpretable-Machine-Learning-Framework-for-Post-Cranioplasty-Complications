@@ -1,4 +1,3 @@
-# 导入必要的库
 import numpy as np
 import pandas as pd
 # from econml.dml import DoubleMLRegressor
@@ -7,7 +6,7 @@ from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
-# 导入必要的库
+
 import random
 import numpy as np
 import pandas as pd
