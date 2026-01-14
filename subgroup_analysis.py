@@ -260,9 +260,7 @@ if __name__ == '__main__':
                    'rotation','rf',
                    'extra_tree',
                    'extra_tree','rf','rf',]
-    
-    # choose_feas = [['Pre.op.infection','Pre.op.fluid.collections','Skull.defect.area','DC.CP.interval',
-    # 'Pre.op.V.P','Titanium','GCS','Surgery.time','N.P.drainage']] 
+
 
     # the corresponding independent variables of each outcome variables
     choose_feas = [
