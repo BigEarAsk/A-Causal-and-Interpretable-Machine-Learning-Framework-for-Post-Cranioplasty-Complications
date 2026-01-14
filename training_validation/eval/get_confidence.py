@@ -22,11 +22,8 @@ import lightgbm as lgb
 np.random.seed(100)
 random.seed(100)
 
-# Only  Training, Internal Validation and External Validation
-# External Validation: AUC/External Validation Cohort(After Genetic Algorithm).xlsx
-# Training and Internal Validation: AUC/Derivation Cohort(After Genetic Algorithm).xlsx
 
-def get_data(path = 'AUC/Derivation Cohort(After Genetic Algorithm).xlsx',id = 0,rows = None,x_index = -1,y_index = -1):
+def get_data(path = 'xxx.xlsx',id = 0,rows = None,x_index = -1,y_index = -1):
     x,y = [],[]
     file = xlrd.open_workbook(path)
     sheet = file.sheet_by_index(id)
@@ -58,7 +55,7 @@ def write_xls_evaluate(data,model_name,var_name,value_name,excel_name):
             model_data = sheet_data[r]
             for c in range(len(model_data)):
                 sheet.write(r+1,c+1,model_data[c])
-    workbook.save('置信区间/'+excel_name+'_result.xls')
+    workbook.save('xxx_result.xls')
 
 def write_index(data,model_name,var_name,suffix):
     workbook = xlwt.Workbook(encoding='utf-8')
@@ -156,11 +153,9 @@ if __name__ == '__main__':
     delete 'Training' and add 'Internal Validation' and 'External Validation' into names list
     '''
 
-    data_path = ["models/Derivation Cohort(After Genetic Algorithm).xlsx",
-                 "models/Derivation Cohort(After Genetic Algorithm).xlsx",
-                 "models/External Validation Cohort(After Genetic Algorithm).xlsx"]
+    data_path = ["xxxxx.xlsx"] # input data path
     
-    names = ['Training','Internal Validation','External Validation']
+    names = ['Training','Internal Validation']
 
     file = xlrd.open_workbook('cutoff/youden_index_Training.xls')
     youden_sheet = file.sheet_by_index(0)
