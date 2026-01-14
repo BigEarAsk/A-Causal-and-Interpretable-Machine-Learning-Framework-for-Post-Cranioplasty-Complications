@@ -147,9 +147,10 @@ if __name__ == "__main__":
     for path in paths:
         data = get_row_data(path)
 
-        continous_id = [0,13,15,19,20,21,22]
-        discrete_id = list(set(range(24)) - set(continous_id))
+        continous_id = [0,13,15,19,20,21,22]   # column_ids of continous variables
+        discrete_id = list(set(range(24)) - set(continous_id)) # column_ids of nominal variables
 
+        # key: column_ids of multicategorical variables  value: values of the multicategorical variable
         not_01_info = {
             14:[1,2],
             16:[1,2,3,4],
