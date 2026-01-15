@@ -56,20 +56,10 @@ if __name__ == '__main__':
     
     var_name = ['xxxx'] # outcome variables
     
-    model_name = ['rf','extra_tree',
-                   'rotation','rf',
-                   'extra_tree',
-                   'extra_tree','rf','rf',]
+    model_name = ['rf']
     
     features_to_plot = {
-        'Fluid':['Skull.defect.area','Surgery.time','N.P.drainage'],
-        'Hydro':['GCS','Pre.op.V.P','Skull.defect.area'],
-        'Seizures':['Pre.op.seizures','GCS','Titanium'],
-        'intra_hem':['GCS','Skull.defect.area','Surgery.time'],
-        'Reop':['GCS','Surgery.time','Skull.defect.area'],
         'total':['Surgery.time','Skull.defect.area','GCS'],
-        'infection':['Surgery.time','Pre.op.infection','DC.CP.interval'],
-        'Penu':['Surgery.time','Titanium','Age']
     }
 
     for i,(vars,models) in enumerate(zip(var_name,model_name)):
